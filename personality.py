@@ -1,18 +1,19 @@
 from questions import ask_gemini
-
 def analyze_personality(all_answers):
     prompt = f"""
-    Based on these answers from a personality test:
-    {all_answers}
+    Based on these answers: {all_answers}
     
-    Reveal personality in exactly 4 parts.
-    Each part must be ONLY 1 sentence. No more.
-    Use simple easy English.
+    Give personality result in EXACTLY this format:
     
-    ARCHETYPE: [one cool name]
-    SAVAGE: [one funny brutal sentence]
-    DEEP: [one deep insight sentence]
-    POETIC: [one beautiful sentence]
+    ARCHETYPE: [3 words max]
+    SAVAGE: [one short funny sentence - max 8 words]
+    DEEP: [one short deep sentence - max 8 words]
+    POETIC: [one beautiful sentence - max 8 words]
+    
+    Keep everything SHORT and PUNCHY!
     """
-
     return ask_gemini(prompt)
+    
+    
+
+    
